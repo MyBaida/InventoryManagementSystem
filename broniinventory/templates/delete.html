@@ -1,0 +1,27 @@
+{% extends "partials/base.html" %}
+
+{% block topside %}{% endblock %}
+
+{% block title %}Delete Page{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5">
+              <div class="cardheader ms-3 mt-3 mx-3">DELETE</div>
+              <div class="card-body">
+                <div class="alert alert-danger">ARE YOU SURE YOU WANT TO DELETE?</div>
+          
+                <form method="POST">
+                    {% csrf_token %}
+                    <a class="btn btn-secondary btn-sm" href="{% url "product_view" %}">NO</a>
+                <input class="btn btn-danger btn-sm" type="submit" value="YES">
+                </div>
+            </form>
+            
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
